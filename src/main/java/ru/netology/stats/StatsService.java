@@ -1,65 +1,66 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public long calculateSum(long[] months) {
-        long sum = 0; // начинаем с нуля
-        for (long month : months) {
+    public int calculateSum(int[] months) {
+        int sum = 0; // начинаем с нуля
+        for (int month : months) {
             // аналог sum = sum + purchase;
             sum += month;
         }
         return sum;
     }
 
-    public long findMidle(long[] midlesums) {
-        long currentMidle = midlesums[0];
-        for (long midlesum : midlesums) {
-            if (currentMidle == midlesum) {
-                currentMidle = midlesum;
-            }
+    public int findMidle(int[] months) {
+        int currentMidle = 0;
+        for (int midlesum : months) {
+            currentMidle += midlesum;
+
         }
-        return currentMidle;
+        return currentMidle / months.length;
     }
 
     public int maxValue(int[] values) {
-        int currentMax = values[0]; // берём за точку отсчёта первый
-        for (int value : values) {
-            // на каждой итерации прибавляем единицу
-            // таким образом для первого значения month = 1
-            if (currentMax > value) {
-                currentMax = value;
+        int currentMax = 0;
+        int value = values[0];
+        for (int i = 0; i < values.length; i++) {
+
+            if (value <= values[i]) {
+                value = values[i];
+                currentMax = i;
             }
           }
-        return currentMax;
+        return currentMax + 1;
     }
 
-        public int minValue (int[] values){
-            int currentMin = values[0]; // берём за точку отсчёта первый
-            for (int value : values) {
-                // на каждой итерации прибавляем единицу
-                // таким образом для первого значения month = 1
-                if (currentMin < value) {
+        public int minValue (int[] months){
+            int currentMin = months[0];
+            for (int value : months) {
+
+                if (currentMin <= value) {
                     currentMin = value;
                 }
                  }
             return currentMin;
         }
 
-    public long findBelowTheMidle(long[] midlesums) {
-        long currentMidle = midlesums[0]; // берём за точку отсчёта первый
-        for (long midlesum : midlesums) {
-            if (currentMidle < midlesum) {
-                currentMidle = midlesum;
+    public int findBelowTheMidle(int[] months) {
+        double midle = findMidle(months);
+        int monthsBelowTheMidle = 0;
+        for (int midlesum : months) {
+            if (monthsBelowTheMidle < midle) {
+                monthsBelowTheMidle++;
             }
         }
-        return currentMidle;
+        return monthsBelowTheMidle;
     }
-    public long findAboveMidle(long[] midlesums) {
-        long currentMidle = midlesums[0]; // берём за точку отсчёта первый
-        for (long midlesum : midlesums) {
-            if (currentMidle < midlesum) {
-                currentMidle = midlesum;
+    public int findAboveMidle(int[] months) {
+        int midle = findMidle(months);
+        int monthsAboveMidle = 0;
+        for (int midlesum : months) {
+            if (midlesum > midle) {
+                monthsAboveMidle++;
             }
         }
-        return currentMidle;
+        return monthsAboveMidle;
     }
     }
