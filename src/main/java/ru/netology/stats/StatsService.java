@@ -1,10 +1,11 @@
 package ru.netology.stats;
 
+
 public class StatsService {
-    public int calculateSum(int[] months) {
-        int sum = 0; // начинаем с нуля
-        for (int month : months) {
-            // аналог sum = sum + purchase;
+    public int calculateSum(int[] sales) {
+        int sum = 0;
+        for (int month : sales) {
+
             sum += month;
         }
         return sum;
