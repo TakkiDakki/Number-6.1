@@ -41,31 +41,31 @@ class StatsServiceTest {
     }
 
     @Test
-    void minValue() {
+    void returnminValue() {
 
         int expected = 9;
 
-        int actual = (int) service.findMidle(sales);
+        int actual = (int) service.minValue(sales);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void findBelowTheMidle() {
+    void findBelowThanMidle() {
 
         int expected = 5;
 
-        int actual = (int) service.findMidle(sales);
+        int actual = (int) service.BelowThanMidle(sales);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void findAboveMidle() {
+    void findAbovethanMidle() {
 
         int expected = 5;
 
-        int actual = (int) service.findMidle(sales);
+        int actual = (int) service.AbovethanMidle(sales);
 
         assertEquals(expected, actual);
     }

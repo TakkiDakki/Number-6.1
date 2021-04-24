@@ -17,48 +17,67 @@ public class StatsService {
     }
 
 
-    public int maxValue(int[] values) {
-        int currentMax = 0;
-        int value = values[0];
-        for (int i = 0; i < values.length; i++) {
+    public int maxValue(int[] items) {
+        int currentMax = items[0];
+        for (int item : items) {
 
-            if (value <= values[i]) {
-                value = values[i];
-                currentMax = i;
+            if (item > currentMax) {
+                currentMax = item;
+                       }
+        }
+            int monthCount = 0;
+            int resultMonth = 0;
+            for (int item : items) {
+                monthCount++;
+                if (item == currentMax) {
+                    resultMonth = monthCount;
+                }
             }
-          }
-        return currentMax + 1;
+
+        return resultMonth;
     }
 
-        public int minValue (int[] months){
-            int currentMin = months[0];
-            for (int value : months) {
-
-                if (currentMin <= value) {
-                    currentMin = value;
+        public int minValue (int[] items) {
+            int currentMin = items[0];
+            for (int item : items) {
+                if (item < currentMin) {
+                    currentMin = item;
                 }
-                 }
+            }
+            int monthCount = 0;
+            int resultMonth = 0;
+            for (int item : items) {
+                monthCount++;
+                if (item == currentMin) {
+                    resultMonth = monthCount;
+                }
+                return resultMonth;
+            }
             return currentMin;
         }
 
-    public int findBelowTheMidle(int[] months) {
-        double midle = findMidle(months);
-        int monthsBelowTheMidle = 0;
-        for (int midlesum : months) {
-            if (monthsBelowTheMidle < midle) {
-                monthsBelowTheMidle++;
+    public int BelowThanMidle(int[] items) {
+        int findMidle = findMidle(items);
+        int monthCount = 0;
+        for (int item : items) {
+            if (item > findMidle) {
+                monthCount++;
+
             }
         }
-        return monthsBelowTheMidle;
+        return monthCount;
     }
-    public int findAboveMidle(int[] months) {
-        int midle = findMidle(months);
-        int monthsAboveMidle = 0;
-        for (int midlesum : months) {
-            if (midlesum > midle) {
-                monthsAboveMidle++;
+
+
+    public int AbovethanMidle(int[] items) {
+        int findMidle = findMidle(items);
+        int monthCount = 0;
+        for (int item : items) {
+            if (item < findMidle) {
+                monthCount++;
+
             }
         }
-        return monthsAboveMidle;
+        return monthCount;
     }
     }
