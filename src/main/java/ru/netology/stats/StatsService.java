@@ -2,23 +2,20 @@ package ru.netology.stats;
 
 
 public class StatsService {
-    public int calculateSum(int[] sales) {
+    public int sum(int[] items) {
         int sum = 0;
-        for (int month : sales) {
+        for (int item : items) {
 
-            sum += month;
+            sum += item;
         }
         return sum;
     }
 
-    public int findMidle(int[] months) {
-        int currentMidle = 0;
-        for (int midlesum : months) {
-            currentMidle += midlesum;
-
-        }
-        return currentMidle / months.length;
+    public int findMidle(int[] items) {
+        int sum = sum(items);
+        return sum / items.length;
     }
+
 
     public int maxValue(int[] values) {
         int currentMax = 0;
