@@ -41,7 +41,7 @@ class StatsServiceTest {
     }
 
     @Test
-    void returnminValue() {
+    void returnMinValue() {
 
         int expected = 9;
 

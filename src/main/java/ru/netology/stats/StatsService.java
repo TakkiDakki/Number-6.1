@@ -20,7 +20,6 @@ public class StatsService {
     public int maxValue(int[] items) {
         int currentMax = items[0];
         for (int item : items) {
-
             if (item > currentMax) {
                 currentMax = item;
                        }
@@ -51,9 +50,9 @@ public class StatsService {
                 if (item == currentMin) {
                     resultMonth = monthCount;
                 }
-                return resultMonth;
+
             }
-            return currentMin;
+            return resultMonth;
         }
 
     public int BelowThanMidle(int[] items) {
