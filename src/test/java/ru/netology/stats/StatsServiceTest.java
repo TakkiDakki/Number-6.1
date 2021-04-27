@@ -1,6 +1,7 @@
 package ru.netology.stats;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StatsServiceTest {
@@ -11,13 +12,12 @@ class StatsServiceTest {
     @Test
     void calculateSum() {
 
-        int actual= service.sum(sales);
+        int actual = service.sum(sales);
 
         int expected = 180;
 
         assertEquals(expected, actual);
     }
-
 
 
     @Test
@@ -55,7 +55,7 @@ class StatsServiceTest {
 
         int expected = 5;
 
-        int actual = (int) service.BelowThanMidle(sales);
+        int actual = (int) service.belowThanMidle(sales);
 
         assertEquals(expected, actual);
     }
@@ -65,7 +65,7 @@ class StatsServiceTest {
 
         int expected = 5;
 
-        int actual = (int) service.AbovethanMidle(sales);
+        int actual = (int) service.abovethanMidle(sales);
 
         assertEquals(expected, actual);
     }

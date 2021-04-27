@@ -22,40 +22,40 @@ public class StatsService {
         for (int item : items) {
             if (item > currentMax) {
                 currentMax = item;
-                       }
-        }
-            int monthCount = 0;
-            int resultMonth = 0;
-            for (int item : items) {
-                monthCount++;
-                if (item == currentMax) {
-                    resultMonth = monthCount;
-                }
             }
+        }
+        int monthCount = 0;
+        int resultMonth = 0;
+        for (int item : items) {
+            monthCount++;
+            if (item == currentMax) {
+                resultMonth = monthCount;
+            }
+        }
 
         return resultMonth;
     }
 
-        public int minValue (int[] items) {
-            int currentMin = items[0];
-            for (int item : items) {
-                if (item < currentMin) {
-                    currentMin = item;
-                }
+    public int minValue(int[] items) {
+        int currentMin = items[0];
+        for (int item : items) {
+            if (item < currentMin) {
+                currentMin = item;
             }
-            int monthCount = 0;
-            int resultMonth = 0;
-            for (int item : items) {
-                monthCount++;
-                if (item == currentMin) {
-                    resultMonth = monthCount;
-                }
-
-            }
-            return resultMonth;
         }
+        int monthCount = 0;
+        int resultMonth = 0;
+        for (int item : items) {
+            monthCount++;
+            if (item == currentMin) {
+                resultMonth = monthCount;
+            }
 
-    public int BelowThanMidle(int[] items) {
+        }
+        return resultMonth;
+    }
+
+    public int belowThanMidle(int[] items) {
         int findMidle = findMidle(items);
         int monthCount = 0;
         for (int item : items) {
@@ -68,7 +68,7 @@ public class StatsService {
     }
 
 
-    public int AbovethanMidle(int[] items) {
+    public int abovethanMidle(int[] items) {
         int findMidle = findMidle(items);
         int monthCount = 0;
         for (int item : items) {
@@ -79,4 +79,4 @@ public class StatsService {
         }
         return monthCount;
     }
-    }
+}
